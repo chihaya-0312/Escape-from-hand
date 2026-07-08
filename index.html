@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/favicon.png">
+    <title>Escape from hand</title>
+    <!--英語フォント-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!--日本語フォント-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        background: black;
+        overflow: hidden;
+      }
+
+      canvas {
+        display: block;
+        margin: auto;
+        background: black;
+      }
+
+      /*スタートボタン*/
+      .start{
+        font-size: 20px;
+        font-family: "Quantico", sans-serif;
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        transform: translateX(-50%);
+        
+        color: #fff;
+        border: 2px solid #fff;
+        padding: 10px 30px;
+        
+        text-align: center;
+      }
+
+      .start:hover{
+        color: #000;
+        background-color: #fff;
+      }
+
+      /*操作方法画面*/
+      .how-play, .menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .btn1{
+        width: 60px;
+        height: 60px;
+        position:absolute;
+        top:20px;
+        right:20px;
+        border: 2px solid #fff;
+
+        font-size: 40px;
+        font-family: "DotGothic16";
+        text-align: center;
+        color: #fff;
+      }
+
+      img{
+        width: 60px;
+        height: 60px;
+      }
+
+      .btn1:hover:not(.noHover), .btn2:hover:not(.noHover), .btn1.active, .btn2.active{
+        background-color: #fff;
+        color: #000;
+      }
+
+      /*手の形の選択画面*/
+      .btn2{
+        width: 60px;
+        height: 60px;
+        position:absolute;
+        top:100px;
+        right:20px;
+        border: 2px solid #fff;
+      }
+
+      /*タイトルに戻るボタン*/
+      .return{
+        font-size: 20px;
+        font-family: "Quantico", sans-serif;
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+        top: 75%;
+        transform: translateX(-50%);
+        
+        color: #fff;
+        border: 2px solid #fff;
+        padding: 10px 30px;
+        
+        text-align: center;
+      }
+
+      .return:hover{
+        color: #000;
+        background-color: #fff;
+      }
+    </style>
+</head>
+    <body>
+
+      <div class="how-play">
+        <div class="btn1">
+          <img class="hatena">
+        </div>
+        <div class="sousa"></div>
+      </div>
+
+      <div class="menu">
+        <div class="btn2">
+          <img class="menuicon">
+        </div>
+        <div class="lineup"></div>
+      </div>
+
+      <div class="start">START</div>
+      <div class="return">return to title</div>
+      <canvas id="game"  width="640" height="480"></canvas>
+      <script src="script.js"></script>
+    </body>
+</html>
