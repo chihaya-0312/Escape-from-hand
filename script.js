@@ -387,12 +387,18 @@ function drawTitle() {
 function rule() {
   if(!howPlayOpen)return;
 
+  //背景と枠
   ctx.fillStyle="#000";
   ctx.fillRect(boxX, boxY, boxW, boxH);
 
   ctx.strokeStyle = "#fff";
   ctx.lineWidth = 2;
   ctx.strokeRect(boxX, boxY, boxW, boxH);
+
+  //テキスト
+  ctx.fillStyle = "#fff";
+  ctx.font = "35px DotGothic16"
+  ctx.fillText("準備中…", canvas.width/2, canvas.height/2);
 };
 
 
