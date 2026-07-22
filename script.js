@@ -397,6 +397,11 @@ function rule() {
 
   //テキスト
   ctx.fillStyle = "#fff";
+  ctx.font = "35px Quantico"
+  ctx.fillText("About this game", canvas.width/2, boxY+80);
+  ctx.font="20px DotGothic16";
+  ctx.fillText("このゲームについて", canvas.width/2, boxY+115);
+  
   ctx.font = "35px DotGothic16"
   ctx.fillText("準備中…", canvas.width/2, canvas.height/2);
 };
@@ -421,7 +426,7 @@ function handShape() {
     ctx.fillText("Change Hand ?", canvas.width/2, boxY+80);
 
     ctx.font="20px DotGothic16";
-    ctx.fillText("手の形を変更できます", canvas.width/2, boxY+110);
+    ctx.fillText("手の形を変更できます", canvas.width/2, boxY+115);
 
 
     handY = boxY+180;
@@ -441,30 +446,21 @@ function handShape() {
         img = hands[i].closeR;
       }
 
-      ctx.drawImage(
-        img,
-        xList[i]-size/2,
-        handY,
-        size,
-        size
-      );
+      ctx.drawImage(img, xList[i]-size/2, handY, size, size);
 
       if(i === selectedHand){
         ctx.strokeStyle = "white";
         ctx.lineWidth = 2;
         // 外側
         ctx.strokeRect(xList[i]-size/2-15, handY-15, size+30, size+30);
-
-      // 内側
-      ctx.strokeRect(xList[i]-size/2-8, handY-8, size+16, size+16);
+        // 内側
+        ctx.strokeRect(xList[i]-size/2-8, handY-8, size+16, size+16);
       }else if(i === hoverHand){
         ctx.strokeStyle = "white";
         ctx.lineWidth = 2;
-
         ctx.strokeRect(xList[i]-size/2-10, handY-10, size+20, size+20);};
         
         ctx.font="25px DotGothic16";
-        
         ctx.fillText(hands[i].name, xList[i], handY+size+50);
     };
   };
