@@ -100,6 +100,16 @@ const hands = [
 const BGM = new Audio("audio/know_own_mind.mp3");
 BGM.volume = 0.5;
 
+const gameover = new Audio("audio/gameover.mp3");
+gameover.volume = 0.8;
+
+//効果音
+const itemSE =[
+  new Audio("audio/itemSE1.mp3"),
+  new Audio("audio/itemSE2.mp3"),
+  new Audio("audio/itemSE3.mp3")
+];
+
 //画面サイズ
 function resize() {
   canvas.width = window.innerWidth;
@@ -201,6 +211,7 @@ returnBtn.addEventListener("click", ()=>{
   returnBtn.style.display = "none";
   startBtn.style.display = "block";
 
+  gameover.pause();
   BGM.currentTime = 0;
 });
 
@@ -276,6 +287,11 @@ canvas.addEventListener("click", e =>{
       if (dx * dx + dy * dy < ITEM_R * ITEM_R) {
         items.splice(i, 1);
         score++;
+
+        const randomSE = itemSE[Math.floor(Math.random() * itemSE.length)];
+        randomSE.currentTime = 0;
+        randomSE.volume = 0.8;
+        randomSE.play();
         break;
       }
     }
@@ -354,6 +370,8 @@ function checkHit() {
   if (dx * dx + dy * dy < 110 * 110) {
     proc = 2;
     BGM.pause();
+    gameover.currentTime = 0;
+    gameover.play();
   }
 }
 
@@ -498,12 +516,21 @@ function drawGameOver() {
   returnBtn.style.display = "block";
 }
 
+const clearMessage = [
+  "Great!",
+  "Excellent!",
+  "Awesome!",
+  "nice!",
+  "Come back again?"
+]
+const praise = clearMessage[Math.floor(Math.random() * clearMessage.length)];
+
 //ゲームクリア
 function drawClear() {
   ctx.fillStyle = "gold";
   ctx.textAlign = "center";
   ctx.font = "60px Quantico";
-  ctx.fillText("Great!", canvas.width / 2, canvas.height / 2 - 40);
+  ctx.fillText(praise, canvas.width / 2, canvas.height / 2 - 40);
 
   ctx.fillStyle = "white";
   ctx.font = "25px Quantico";
