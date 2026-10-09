@@ -21,7 +21,7 @@ let size = 150;
 //どの手が選択されているか
 let selectedHand = 0;
 
-//
+//このゲームについてのアイコン画像
 const icon1 = new Image();
 icon1.src = "image/hatena.png";
 
@@ -74,21 +74,21 @@ closeDekopinL.src = "image/dekopin/close_dekopinL.png";
 //手
 const hands = [
   {
-    name: "デフォルト",
+    name: "Normal",
     openR: openHandR,
     openL: openHandL,
     closeR: closeHandR,
     closeL: closeHandL
   },
   {
-    name: "キツネ",
+    name: "Fox",
     openR: openFoxhandR,
     openL: openFoxhandL,
     closeR: closeFoxhandR,
     closeL: closeFoxhandL
   },
   {
-    name: "デコピン",
+    name: "Dekopin",
     openR: openDekopinR,
     openL: openDekopinL,
     closeR: closeDekopinR,
@@ -120,12 +120,13 @@ resize();
 window.addEventListener("resize", resize);
 
 
-//操作方法画面ボタンを押したら
+//このゲームについて
 let howPlayOpen = false;
 
 const hatenaIcon = document.querySelector(".hatena");
 hatenaIcon.src = icon1.src;
 
+const about = document.querySelector(".about");
 const hatenaBtn = document.querySelector(".btn1");
 hatenaBtn.addEventListener("click", ()=>{
 
@@ -135,15 +136,48 @@ hatenaBtn.addEventListener("click", ()=>{
 
   if(howPlayOpen){
     startBtn.style.display="none";
+    about.style.display = "block";
     hatenaBtn.classList.add("active");
     hatenaBtn.classList.add("noHover");
     menuBtn.classList.add("noHover");
   }else{
     startBtn.style.display="block";
+    about.style.display = "none";
+    rulePage.style.display = "none";
+    creditPage.style.display = "none";
     hatenaBtn.classList.remove("active");
     hatenaBtn.classList.remove("noHover");
     menuBtn.classList.remove("noHover");
   }
+});
+
+//ルール
+const rulePage = document.querySelector(".rule-page");
+const ruleBtn = document.querySelector(".rule-btn");
+ruleBtn.addEventListener("click", ()=>{
+  about.style.display = "none";
+  rulePage.style.display = "block";
+});
+
+const ruleClose = document.querySelector(".rule-close");
+ruleClose.addEventListener("click", ()=>{
+  rulePage.style.display = "none";
+  about.style.display = "block";
+});
+
+
+//クレジット
+const creditPage = document.querySelector(".credit-page");
+const creditBtn = document.querySelector(".credit-btn");
+creditBtn.addEventListener("click", ()=>{
+  about.style.display = "none";
+  creditPage.style.display = "block";
+});
+
+const creditClose =document.querySelector(".credit-close");
+creditClose.addEventListener("click", ()=>{
+  creditPage.style.display = "none";
+  about.style.display = "block";
 });
 
 
@@ -381,13 +415,13 @@ function drawTitle() {
 
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
-    ctx.font = "75px Quantico";
+    ctx.font = "80px Quantico";
     ctx.fillText("Escape from hand", canvas.width / 2, canvas.height / 2);
 
-    ctx.font="30px Quantico";
+    ctx.font="35px Quantico";
     ctx.fillText("Don't get caught, collect it", canvas.width / 2, canvas.height / 2 + 75);
 
-    ctx.font = "23px DotGothic16";
+    ctx.font = "25px DotGothic16";
     ctx.fillText("捕まらないで、それを集めて", canvas.width / 2, canvas.height / 2 + 115);
   };
 
@@ -399,31 +433,6 @@ function drawTitle() {
 
   let boxX = (canvas.width - boxW) / 2;
   let boxY = (canvas.height - boxH) / 2;
-
-
-//操作方法を確認する
-function rule() {
-  if(!howPlayOpen)return;
-
-  //背景と枠
-  ctx.fillStyle="#000";
-  ctx.fillRect(boxX, boxY, boxW, boxH);
-
-  ctx.strokeStyle = "#fff";
-  ctx.lineWidth = 2;
-  ctx.strokeRect(boxX, boxY, boxW, boxH);
-
-  //テキスト
-  ctx.fillStyle = "#fff";
-  ctx.font = "35px Quantico"
-  ctx.fillText("About this game", canvas.width/2, boxY+80);
-  ctx.font="20px DotGothic16";
-  ctx.fillText("このゲームについて", canvas.width/2, boxY+115);
-  
-  ctx.font = "35px DotGothic16"
-  ctx.fillText("準備中…", canvas.width/2, canvas.height/2);
-};
-
 
 //手の形を選ぶ
 function handShape() {
@@ -510,7 +519,7 @@ function drawGame() {
 function drawGameOver() {
   ctx.fillStyle = "red";
   ctx.textAlign = "center";
-  ctx.font = "60px Quantico";
+  ctx.font = "65px Quantico";
   ctx.fillText("Caught!", canvas.width / 2, canvas.height / 2);
 
   returnBtn.style.display = "block";
@@ -520,7 +529,7 @@ const clearMessage = [
   "Great!",
   "Excellent!",
   "Awesome!",
-  "nice!",
+  "Nice!",
   "Come back again?"
 ]
 const praise = clearMessage[Math.floor(Math.random() * clearMessage.length)];
@@ -529,11 +538,11 @@ const praise = clearMessage[Math.floor(Math.random() * clearMessage.length)];
 function drawClear() {
   ctx.fillStyle = "gold";
   ctx.textAlign = "center";
-  ctx.font = "60px Quantico";
+  ctx.font = "65px Quantico";
   ctx.fillText(praise, canvas.width / 2, canvas.height / 2 - 40);
 
   ctx.fillStyle = "white";
-  ctx.font = "25px Quantico";
+  ctx.font = "28px Quantico";
   ctx.fillText("Score: " + score, canvas.width / 2, canvas.height / 2 + 20);
 
   returnBtn.style.display = "block";
@@ -544,7 +553,6 @@ function main() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   if (proc === 0) {
-    rule();
     handShape();
     drawTitle();
   } else if (proc === 1) {
@@ -564,7 +572,7 @@ function main() {
     hatenaBtn.style.display = "none";
   }
 
-  requestAnimationFrame(main);//一秒間に(ディスプレイのフレームレートによって変わる)回実行される
+  requestAnimationFrame(main);
 };
 
 function switchHand() {
