@@ -48,11 +48,294 @@
         background-color: #fff;
       }
 
-      /*操作方法画面*/
+      /*モード選択画面*/
+      .mode-select{
+        display: none;
+        width: 700px;
+        height: 300px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid #fff;
+
+        color: #fff;
+        font-family: "Quantico";
+        text-align: center;
+      }
+
+      .mode-close {
+        position: absolute;
+        right: 15px;
+        font-size: 30px;
+        font-family: "Quantico", sans-serif;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .mode-titleEN{
+        font-size: 35px;
+        margin: 35px;
+      }
+
+      .mode-list {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+      }
+
+      .mode {
+        width: 250px;
+        text-align: center;
+      }
+
+      .mode-btn {
+        display: inline-block;
+        font-size: 24px;
+        font-family: "Quantico";
+        color: #fff;
+        border: 2px solid #fff;
+        padding: 10px 30px;
+        cursor: pointer;
+      }
+
+      .mode-btn:hover {
+        color: #000;
+        background-color: #fff;
+      }
+
+      .mode-descriptionEN{
+        margin-top: 20px;
+        color: #fff;
+        font-family: "Quantico";
+        font-size: 20px;
+      }
+
+      .mode-descriptionJP {
+        color: #fff;
+        font-family: "DotGothic16";
+        font-size: 16px;
+      }
+
+
+      /*このゲームについて*/
+      .about {
+        display: none;
+        width: 900px;
+        height: 500px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #000;
+        border: 2px solid #fff;
+        color: #fff;
+        text-align: center;
+      }
+
+      .about-titleEN{
+        margin-top: 40px;
+        font-family: "Quantico";
+        font-size: 35px;
+      }
+
+      .about-titleJP{
+        margin-top: 2px;
+        font-family: "DotGothic16";
+        font-size: 20px;
+      }
+
+      .about-text {
+        margin-top: 100px;
+        font-family: "Quantico", "DotGothic16";
+        font-size: 30px;
+      }
+
+      .about-menu {
+        display: flex;
+        justify-content: center;
+        gap: 200px;
+        margin-top: 110px;
+      }
+
+      .about-btn {
+        font-family: "Quantico";
+        font-size: 20px;
+        border: 2px solid #fff;
+        cursor: pointer;
+        padding: 10px 30px;
+      }
+
+      .about-btn:hover{
+        color: #000;
+        background-color: #fff;
+      }
+
+      /*ルール*/
+      .rule-page {
+        display: none;
+        width: 900px;
+        height: 500px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #000;
+        border: 2px solid #fff;
+        color: #fff;
+        text-align: center;
+      }
+
+      .rule-titleEN {
+        margin-top: 40px;
+        font-family: "Quantico";
+        font-size: 35px;
+      }
+
+      .rule-titleJP{
+        margin-top: 3px;
+        font-family: "DotGothic16";
+        font-size: 20px;
+      }
+
+      .rule-list {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 40px;
+      }
+
+      .rule-item {
+        width: 300px;
+        text-align: center;
+      }
+
+      .rule-image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border: 1px solid #fff;
+      }
+
+      .rule-descriptionEN {
+        margin-top: 15px;
+        font-family: "Quantico";
+        font-size: 25px;
+      }
+
+      .rule-descriptionJP {
+        margin-top: 2px;
+        font-family: "DotGothic16";
+        font-size: 20px;
+      }
+
+      .rule-close {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-family: "Quantico";
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      /*クレジット*/
+      .credit-page{
+        display: none;
+        width: 900px;
+        height: 500px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #000;
+        border: 2px solid #fff;
+        color: #fff;
+        text-align: center;
+      }
+
+      .credit-titleEN{
+        margin-top: 40px;
+        font-family: "Quantico";
+        font-size: 35px;
+      }
+
+      .credit-titleJP{
+        margin-top: 2px;
+        font-family: "DotGothic16";
+        font-size: 20px;
+      }
+
+      .credit-texttitle{
+        font-family: "Quantico";
+        font-size: 25px;
+        margin: 70px 0 10px;
+        display: inline-block;
+        border-bottom: 1px solid #fff;
+      }
+
+      .credit{
+        height: 365px;
+        overflow: auto;
+      }
+
+      .credit::-webkit-scrollbar{
+        width: 7px;
+      }
+
+      .credit::-webkit-scrollbar-thumb{
+        background: #fff;
+        border-radius: 20px;
+      }
+
+      .credit::-webkit-scrollbar-track{
+        background: #000;
+      }
+
+      .credit-name{
+        font-family: "Quantico", "DotGothic16";
+        font-size: 23px;
+        margin: 10px;
+      }
+
+      .by{
+        font-size: 23px;
+        font-family: "Quantico", "DotGothic16";
+        margin: 20px;
+      }
+
+      .by::after{
+        content:  "↗";
+        font-size: 0.7em;
+      }
+
+      .BGM-title{
+        font-size: 20px;
+        font-family: "Quantico", "DotGothic16";
+        margin: 10px 0 0 3px;
+      }
+
+      .BGM-name{
+        font-size: 18px;
+        font-family: "Quantico";
+        margin: 4px;
+      }
+
+      .credit-close{
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-family: "Quantico";
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      
+      /*ボタン*/
       .how-play, .menu{
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
       }
 
       .btn1{
@@ -62,11 +345,6 @@
         top:20px;
         right:20px;
         border: 2px solid #fff;
-
-        font-size: 40px;
-        font-family: "DotGothic16";
-        text-align: center;
-        color: #fff;
       }
 
       img{
@@ -113,12 +391,60 @@
     </style>
 </head>
     <body>
-
       <div class="how-play">
         <div class="btn1">
           <img class="hatena">
         </div>
         <div class="sousa"></div>
+      </div>
+
+    　<div class="about">
+        <div class="about-titleEN">About this game</div>
+        <div class="about-titleJP">このゲームについて</div>
+        <div class="about-text">
+          This game is unfinished.<br>※このゲームは未完成です※
+        </div>
+        <div class="about-menu">
+          <div class="about-btn rule-btn">RULE</div>
+          <div class="about-btn credit-btn">CREDIT</div>
+        </div>
+      </div>
+
+      <div class="rule-page">
+        <div class="rule-close">×</div>
+        <div class="rule-titleEN">RULE</div>
+        <div class="rule-titleJP">ルール</div>
+        <div class="rule-list">
+          <div class="rule-item">
+            <img src="image/rule/rule1.png" class="rule-image">
+            <div class="rule-descriptionEN">Don't touch the hand.</div>
+            <div class="rule-descriptionJP">手に捕まらないこと</div>
+          </div>
+          <div class="rule-item">
+            <img src="image/rule/rule2.png" class="rule-image">
+            <div class="rule-descriptionEN">Collect it.</div>
+            <div class="rule-descriptionJP">それを集めること</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="credit-page">
+        <div class="credit-close">×</div>
+        <div class="credit-titleEN">CREDIT</div>
+        <div class="credit-titleJP">クレジット</div>
+
+        <div class="credit">
+          <div class="credit-texttitle">Game Design, Programming, Art</div>
+          <div class="credit-name">樋口 千杷夜 - Chihaya Higuchi</div>
+          <div class="credit-texttitle">BGM</div>
+          <a href="https://opentracks.com/" target="_blank" rel="noopener noreferrer"><div class="by">DOVE-SYNDROMより</div></a>
+          <div class="BGM-title">「know own mind」</div>
+          <div class="BGM-name">Keido Honda</div>
+          <div class="BGM-title">「アナログテレビの砂嵐」</div>
+          <div class="BGM-name">NaruIDEA</div>
+          <div class="credit-texttitle">Sound Effect</div>
+          <a href="https://www.springin.org/sound-stock/" target="_blank" rel="noopener noreferrer"><div class="by">Springin' Sound Stockより</div></a>
+        </div>
       </div>
 
       <div class="menu">
