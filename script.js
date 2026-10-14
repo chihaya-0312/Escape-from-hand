@@ -119,6 +119,57 @@ function resize() {
 resize();
 window.addEventListener("resize", resize);
 
+//ローディング画面
+window.addEventListener("load", () => {
+  const loading = document.querySelector(".loading");
+  const loadingEn = document.querySelector(".loading-en");
+  const cover = document.querySelector(".transition-cover");
+  loadingEn.textContent = 'loading...';
+
+  // 英語
+  loadingEn.animate(
+    [
+      { opacity: 0 },
+      { opacity: 1 },
+      { opacity: 0 },
+      { opacity: 1 },
+      { opacity: 0 },
+      ],
+    {
+      duration: 2400,
+      fill: "forwards"
+    }
+  );
+  
+  const loadingFade = loading.animate(
+    [
+      { opacity: 1 },
+      { opacity: 0 }
+    ],
+    {
+      duration: 500,
+      delay: 2500,
+      fill: "forwards"
+    }
+  );
+
+  // ローディングが完全に終わったら消す
+  loadingFade.onfinish = () => {
+    loading.remove();
+    cover.animate(
+      [
+        { opacity: 1 },
+        { opacity: 0 }
+      ],
+      {
+        duration: 500,
+        fill: "forwards"
+      }
+    ).onfinish = () => {
+      cover.remove();
+    };
+  };
+});
 
 //このゲームについて
 let howPlayOpen = false;
