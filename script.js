@@ -1,10 +1,6 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
-console.log("Canvas:", canvas.getBoundingClientRect());
-console.log("START:", start.getBoundingClientRect());
-console.log("STARTの親要素:", start.offsetParent);
-
 let proc = 0;
 
 let time = 30;
@@ -634,7 +630,9 @@ function switchHand() {
   handOpen = !handOpen;
   setTimeout(switchHand, 500);
 }
-
+console.log("Canvas:", canvas.getBoundingClientRect());
+console.log("START:", start.getBoundingClientRect());
+console.log("STARTの親要素:", start.offsetParent);
 switchHand();
 
 main();
