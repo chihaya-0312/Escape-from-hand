@@ -1,9 +1,6 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
-const canvas = document.querySelector("#game");
-const start = document.querySelector(".start");
-
 console.log("Canvas:", canvas.getBoundingClientRect());
 console.log("START:", start.getBoundingClientRect());
 console.log("STARTの親要素:", start.offsetParent);
