@@ -114,6 +114,11 @@ const itemSE =[
 function resize() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+
+  console.log(
+    "Canvas:", canvas.width, canvas.height,
+    "Window:", window.innerWidth, window.innerHeight
+  );
 };
 
 resize();
