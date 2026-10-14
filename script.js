@@ -464,16 +464,16 @@ function checkHit() {
 function drawTitle() {
   if(!menuOpen && !howPlayOpen){
 
-    ctx.fillStyle = "white";
+    ctx.fillStyle = "#fff";
     ctx.textAlign = "center";
     ctx.font = "80px Quantico";
-    ctx.fillText("Escape from hand", canvas.width / 2, canvas.height / 2);
+    ctx.fillText('Escape from hand', canvas.width / 2, canvas.height / 2);
 
     ctx.font="35px Quantico";
-    ctx.fillText("Don't get caught, collect it", canvas.width / 2, canvas.height / 2 + 75);
+    ctx.fillText("Don't caught, collect it", canvas.width / 2, canvas.height / 2 + 75);
 
     ctx.font = "25px DotGothic16";
-    ctx.fillText("捕まらないで、それを集めて", canvas.width / 2, canvas.height / 2 + 115);
+    ctx.fillText('捕まらないで、それを集めて', canvas.width / 2, canvas.height / 2 + 115);
   };
 
   returnBtn.style.display = "none";
