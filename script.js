@@ -630,9 +630,7 @@ function switchHand() {
   handOpen = !handOpen;
   setTimeout(switchHand, 500);
 }
-console.log("Canvas:", canvas.getBoundingClientRect());
-console.log("START:", start.getBoundingClientRect());
-console.log("STARTの親要素:", start.offsetParent);
+
 switchHand();
 
 main();
