@@ -114,11 +114,6 @@ const itemSE =[
 function resize() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-
-  console.log(
-    "Canvas:", canvas.width, canvas.height,
-    "Window:", window.innerWidth, window.innerHeight
-  );
 };
 
 resize();
@@ -175,6 +170,10 @@ window.addEventListener("load", () => {
     };
   };
 });
+
+console.log("Canvas:", canvas.getBoundingClientRect());
+console.log("START:", start.getBoundingClientRect());
+console.log("STARTの親要素:", start.offsetParent);
 
 //このゲームについて
 let howPlayOpen = false;
