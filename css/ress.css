@@ -1,0 +1,279 @@
+/* リセットCSS */
+
+/* HTML基本設定 */
+html {
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    word-break: normal;
+}
+
+/* 全要素の基本設定 */
+*,
+:after,
+:before {
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+}
+
+:after,
+:before {
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 水平線 */
+hr {
+    color: inherit;
+    height: 0;
+    overflow: visible;
+}
+
+/* ブロック要素 */
+details,
+main {
+    display: block;
+}
+
+summary {
+    display: list-item;
+}
+
+/* 文字サイズ調整 */
+small {
+    font-size: 80%;
+}
+
+/* 非表示要素 */
+[hidden] {
+    display: none;
+}
+
+/* 略語 */
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+}
+
+/* リンク */
+a {
+    background-color: transparent;
+}
+
+a:active,
+a:hover {
+    outline-width: 0;
+}
+
+/* コード・等幅フォント */
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+}
+
+pre {
+    font-size: 1em;
+}
+
+/* 太字 */
+b,
+strong {
+    font-weight: bolder;
+}
+
+/* 上付き・下付き文字 */
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/* テーブル */
+table {
+    border-color: inherit;
+    text-indent: 0;
+}
+
+/* iframe */
+iframe {
+    border-style: none;
+}
+
+/* フォーム要素の基本設定 */
+input {
+    border-radius: 0;
+}
+
+/* 数値入力のスピンボタン */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/* 検索入力 */
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/* テキストエリア */
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+/* フォーム要素のフォント継承 */
+button,
+input,
+optgroup,
+select,
+textarea {
+    font: inherit;
+}
+
+optgroup {
+    font-weight: 700;
+}
+
+/* ボタン */
+button {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+/* ボタン要素のカーソル */
+[role="button"],
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+    cursor: pointer;
+}
+
+/* ボタンのフォーカス内側境界線リセット */
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+/* Firefoxのフォーカスリング */
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+button:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+/* ボタンの外観 */
+[type="reset"],
+[type="submit"],
+button,
+html [type="button"] {
+    -webkit-appearance: button;
+}
+
+/* フォーム要素の背景・境界線リセット */
+button,
+input,
+select,
+textarea {
+    background-color: transparent;
+    border-style: none;
+}
+
+/* フォーカス時のアウトライン */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline-width: 0;
+}
+
+/* セレクトボックス */
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select::-ms-value {
+    color: currentColor;
+}
+
+/* 凡例 */
+legend {
+    border: 0;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    white-space: normal;
+}
+
+/* ファイルアップロードボタン */
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    color: inherit;
+    font: inherit;
+}
+
+/* 無効化された要素 */
+[disabled] {
+    cursor: default;
+}
+
+/* 画像 */
+img {
+    border-style: none;
+}
+
+/* プログレスバー */
+progress {
+    vertical-align: baseline;
+}
+
+/* ARIA属性によるカーソル設定 */
+[aria-busy="true"] {
+    cursor: progress;
+}
+
+[aria-controls] {
+    cursor: pointer;
+}
+
+[aria-disabled="true"] {
+    cursor: default;
+}
