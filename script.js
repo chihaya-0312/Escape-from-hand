@@ -350,7 +350,7 @@ function addItem() {
   if (proc !== 1) return;
 
     const x = Math.random() * (canvas.width - ITEM_R * 2) + ITEM_R;
-    const y = Math.random() * (canvas.height -100 - ITEM_R * 2) + 100 + ITEM_R;
+    const y = Math.random() * (canvas.height -170 - ITEM_R * 2) + 100 + ITEM_R;
 
     items.push({ x, y });
 
