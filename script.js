@@ -466,13 +466,13 @@ function drawTitle() {
 
     ctx.fillStyle = "#fff";
     ctx.textAlign = "center";
-    ctx.font = "80px Quantico";
+    ctx.font = "77px Quantico";
     ctx.fillText('Escape from hand', canvas.width / 2, canvas.height / 2);
 
-    ctx.font="35px Quantico";
+    ctx.font="32px Quantico";
     ctx.fillText("Don't caught, collect it", canvas.width / 2, canvas.height / 2 + 75);
 
-    ctx.font = "25px DotGothic16";
+    ctx.font = "22px DotGothic16";
     ctx.fillText('捕まらないで、それを集めて', canvas.width / 2, canvas.height / 2 + 115);
   };
 
